@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد | جاردينيا الفاخرة</title>
+
+    <!-- خطوط جوجل الفاخرة -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ملف الاستايل -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <span>توصيل مجاني للطلبات المميزة | تغليف مجاني مع كل باقة</span>
+            <div class="top-bar-links">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i> +20 123 456 7890</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة التصفح (Header) -->
+    <header class="header" id="header" style="box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+        <div class="container header-container">
+            <!-- الشعار -->
+            <a href="index.html" class="logo">
+                <span class="en-logo">Gardenia</span>
+                <span class="ar-logo">جاردينيا</span>
+            </a>
+
+            <!-- الروابط -->
+            <nav class="nav-menu">
+                <ul style="justify-content: center; margin: 0; padding: 0;">
+                    <li><a href="index.html" class="active" style="font-weight: 700; color: var(--dark-green);"><i
+                                class="fa-solid fa-arrow-right"></i> العودة للرئيسية</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي: نموذج التسجيل -->
+    <section class="register-section section-padding">
+        <div class="container">
+            <div class="register-box">
+                <h2 class="lux-title text-center" style="font-size: 2.2rem;">إنشاء حساب جديد</h2>
+                <div class="lux-divider"></div>
+                <p class="text-center" style="margin-bottom: 2rem; color: var(--text-muted);">
+                    انضم لشريحة عملاء جاردينيا للحصول على تجربة تسوق أسرع وعروض حصرية للباقات الفاخرة.
+                </p>
+
+                <!-- نموذج التسجيل -->
+                <form class="auth-form" onsubmit="event.preventDefault(); window.location.href='index.html';">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>الاسم الأول</label>
+                            <input type="text" placeholder="مثال: أحمد" required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label>اسم العائلة</label>
+                            <input type="text" placeholder="مثال: محمد" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" placeholder="name@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>رقم الهاتف للتواصل</label>
+                        <input type="tel" placeholder="01X XXXX XXXX" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>كلمة المرور</label>
+                            <input type="password" placeholder="••••••••" required>
+                        </div>
+                        <div class="form-group">
+                            <label>تأكيد كلمة المرور</label>
+                            <input type="password" placeholder="••••••••" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-luxury"
+                        style="width: 100%; margin-top: 1rem; border-radius: 8px;">
+                        <i class="fa-solid fa-user-plus"></i> تسجيل حساب جديد
+                    </button>
+
+                    <p class="text-center" style="margin-top: 1.5rem; color: var(--text-muted);">
+                        لديك حساب بالفعل؟ <a href="index.html"
+                            style="color: var(--gold); font-weight: bold; text-decoration: underline;">تسجيل الدخول من
+                            هنا</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر المختصر -->
+    <footer class="footer" style="padding: 2rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container">
+            <p style="color: #888; margin-bottom: 0;">جميع الحقوق محفوظة &copy; 2026 جاردينيا للزهور الفاخرة.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
