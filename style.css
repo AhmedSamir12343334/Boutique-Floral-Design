@@ -961,7 +961,7 @@ ul {
     /* Cart */
     .cart-sidebar {
         width: 100%;
-        right: -100%;
+        left: -100%;
     }
 
     /* Hero */
