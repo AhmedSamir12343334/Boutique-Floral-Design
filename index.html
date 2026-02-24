@@ -118,7 +118,7 @@
             </div>
 
             <div class="collections-grid">
-                <a href="#" class="collection-item reveal">
+                <a href="#shop" class="collection-item reveal" data-filter-target="weddings">
                     <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800&auto=format&fit=crop"
                         alt="مناسبات سعيدة">
                     <div class="item-overlay">
@@ -126,7 +126,7 @@
                         <span>تسوق الآن <i class="fa-solid fa-arrow-left"></i></span>
                     </div>
                 </a>
-                <a href="#" class="collection-item reveal">
+                <a href="#shop" class="collection-item reveal" data-filter-target="romance">
                     <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?q=80&w=800&auto=format&fit=crop"
                         alt="حب ورومانسية">
                     <div class="item-overlay">
@@ -134,12 +134,20 @@
                         <span>تسوق الآن <i class="fa-solid fa-arrow-left"></i></span>
                     </div>
                 </a>
-                <a href="#" class="collection-item reveal">
+                <a href="#shop" class="collection-item reveal" data-filter-target="silk">
                     <img src="https://images.unsplash.com/photo-1613539246066-78db6ec4ff0f?q=80&w=800&auto=format&fit=crop"
                         alt="أزهار مجففة">
                     <div class="item-overlay">
                         <h3>أزهار الحرير الدائمة</h3>
                         <span>تسوق الآن <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </a>
+                <a href="#shop" class="collection-item reveal" data-filter-target="all">
+                    <img src="https://images.unsplash.com/photo-1591886960571-74d43a9d4166?q=80&w=800&auto=format&fit=crop"
+                        alt="تسوق الآن">
+                    <div class="item-overlay">
+                        <h3>تسوق الآن</h3>
+                        <span>شراء <i class="fa-solid fa-arrow-left"></i></span>
                     </div>
                 </a>
             </div>
@@ -157,14 +165,14 @@
             <!-- فلاتر -->
             <div class="filter-controls reveal">
                 <button class="filter-btn active" data-filter="all">الكل</button>
-                <button class="filter-btn" data-filter="roses">ورود جوري</button>
-                <button class="filter-btn" data-filter="tulips">توليب</button>
-                <button class="filter-btn" data-filter="mixed">باقات متنوعة</button>
+                <button class="filter-btn" data-filter="weddings">أفراح وتهنئة</button>
+                <button class="filter-btn" data-filter="romance">رومانسية وحب</button>
+                <button class="filter-btn" data-filter="silk">أزهار الحرير</button>
             </div>
 
             <div class="products-grid" id="productsGrid">
                 <!-- Product 1 -->
-                <div class="product-card reveal" data-category="roses">
+                <div class="product-card reveal" data-category="romance">
                     <div class="product-img">
                         <img src="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?auto=compress&cs=tinysrgb&w=800"
                             alt="باقة الورد الأحمر">
@@ -181,7 +189,7 @@
                 </div>
 
                 <!-- Product 2 -->
-                <div class="product-card reveal" data-category="mixed">
+                <div class="product-card reveal" data-category="weddings">
                     <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1591886960571-74d43a9d4166?q=80&w=800&auto=format&fit=crop"
                             alt="أزهار الربيع">
@@ -198,7 +206,7 @@
                 </div>
 
                 <!-- Product 3 -->
-                <div class="product-card reveal" data-category="tulips">
+                <div class="product-card reveal" data-category="weddings">
                     <div class="product-img">
                         <span class="lux-badge">الأكثر طلباً</span>
                         <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?q=80&w=800&auto=format&fit=crop"
@@ -216,7 +224,7 @@
                 </div>
 
                 <!-- Product 4 -->
-                <div class="product-card reveal" data-category="mixed">
+                <div class="product-card reveal" data-category="silk">
                     <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=800&auto=format&fit=crop"
                             alt="زهور برية">
@@ -387,6 +395,37 @@
                 <button type="button" class="btn btn-luxury" style="width: 100%; margin-top: 1rem;">دخول</button>
                 <p class="text-center" style="margin-top: 1.5rem; color: var(--text-muted);">ليس لديك حساب؟ <a
                         href="register.html" style="color: var(--gold); font-weight: bold;">سجل الآن</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- نافذة إتمام الطلب -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-content" style="max-width: 500px;">
+            <button class="close-modal" id="closeOrder"><i class="fa-solid fa-xmark"></i></button>
+            <div class="text-center" style="margin-bottom: 1.5rem;">
+                <i class="fa-brands fa-whatsapp" style="font-size: 3rem; color: #25D366;"></i>
+                <h2 class="lux-title" style="font-size: 1.8rem; margin-top: 0.5rem;">إتمام الطلب عبر واتساب</h2>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.95rem;">أدخل بياناتك وسيتم إرسال
+                    طلبك مباشرة إلينا</p>
+            </div>
+            <form class="login-form" id="orderForm">
+                <div class="form-group">
+                    <label>الاسم الكريم</label>
+                    <input type="text" id="orderName" placeholder="مثال: أحمد محمد" required>
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف</label>
+                    <input type="tel" id="orderPhone" placeholder="01X XXXX XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>عنوان التوصيل</label>
+                    <input type="text" id="orderAddress" placeholder="الشارع، المنطقة، المدينة" required>
+                </div>
+                <button type="submit" class="btn btn-luxury"
+                    style="width: 100%; margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 8px;">
+                    <i class="fa-brands fa-whatsapp"></i> إرسال الطلب عبر واتساب
+                </button>
             </form>
         </div>
     </div>

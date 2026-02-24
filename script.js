@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartItemsContainer = document.getElementById('cartItems');
     const cartTotalValue = document.getElementById('cartTotalValue');
     const checkoutBtn = document.getElementById('checkoutBtn');
+    const orderModal = document.getElementById('orderModal');
     const badge = document.querySelector('.cart-badge');
     const toast = document.getElementById('toast');
     const toastMsg = document.getElementById('toastMsg');
@@ -126,6 +127,26 @@ document.addEventListener("DOMContentLoaded", function () {
     cartBtn.addEventListener('click', () => toggleCart(true));
     closeCartBtn.addEventListener('click', () => toggleCart(false));
     cartOverlay.addEventListener('click', () => toggleCart(false));
+
+    // Collection items scroll to shop and filter
+    const collectionItems = document.querySelectorAll('.collection-item');
+    collectionItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            const targetFilter = item.getAttribute('data-filter-target');
+            if (targetFilter) {
+                e.preventDefault();
+                // Trigger the filter button click
+                const filterBtn = document.querySelector(`.filter-btn[data-filter="${targetFilter}"]`);
+                if (filterBtn) filterBtn.click();
+
+                // Scroll to the shop section
+                const shopSection = document.getElementById('shop');
+                if (shopSection) {
+                    shopSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
 
     // Add to Cart Logic
     const addBtns = document.querySelectorAll('.add-to-cart');
@@ -257,20 +278,64 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Checkout Fake Logic
+    // Checkout → Open Order Modal
     checkoutBtn.addEventListener('click', () => {
         if (cart.length > 0) {
-            cart = [];
-            updateCartUI();
             toggleCart(false);
-
-            // Show Success Notification
-            toastMsg.innerHTML = '<b>نجاح!</b> جاري تحويلك لإتمام الطلب والدفع...';
-            clearTimeout(toastTimeout);
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 4000);
+            toggleModal(orderModal, true);
         }
     });
+
+    // Build WhatsApp message from cart items
+    function buildWhatsAppMessage(name, phone, address) {
+        let msg = `🌸 *طلب جديد من جاردينيا الفاخرة* 🌸\n\n`;
+        msg += `👤 *الاسم:* ${name}\n`;
+        msg += `📞 *الهاتف:* ${phone}\n`;
+        msg += `📍 *العنوان:* ${address}\n\n`;
+        msg += `🛒 *تفاصيل الطلب:*\n`;
+        msg += `━━━━━━━━━━━━━━━━\n`;
+        let total = 0;
+        cart.forEach((item, i) => {
+            const itemTotal = item.price * item.qty;
+            total += itemTotal;
+            msg += `${i + 1}. ${item.name}\n   الكمية: ${item.qty}   |   الإجمالي: ${itemTotal.toLocaleString()} ج.م\n`;
+        });
+        msg += `━━━━━━━━━━━━━━━━\n`;
+        msg += `💰 *المجموع الكلي: ${total.toLocaleString()} ج.م*\n\n`;
+        msg += `شكراً لتسوقكم معنا! 🌺`;
+        return encodeURIComponent(msg);
+    }
+
+    // Submit order via WhatsApp
+    const orderForm = document.getElementById('orderForm');
+    if (orderForm) {
+        orderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('orderName').value.trim();
+            const phone = document.getElementById('orderPhone').value.trim();
+            const address = document.getElementById('orderAddress').value.trim();
+
+            const shopPhone = '201234567890'; // رقم واتساب المحل
+            const message = buildWhatsAppMessage(name, phone, address);
+            const whatsappURL = `https://wa.me/${shopPhone}?text=${message}`;
+
+            // Clear cart
+            cart = [];
+            updateCartUI();
+            toggleModal(orderModal, false);
+
+            // Show success toast
+            toastMsg.innerHTML = '<b>تم إرسال طلبك!</b> سيتم تحويلك للواتساب لتأكيد الطلب...';
+            clearTimeout(toastTimeout);
+            toast.classList.add('show');
+            toastTimeout = setTimeout(() => toast.classList.remove('show'), 4000);
+
+            // Open WhatsApp after short delay
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+            }, 1000);
+        });
+    }
 
     // --- 6. Modals Logic (Search & Profile) ---
     const searchBtn = document.getElementById('searchBtn');
@@ -298,10 +363,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (closeSearch) closeSearch.addEventListener('click', () => toggleModal(searchModal, false));
     if (closeProfile) closeProfile.addEventListener('click', () => toggleModal(profileModal, false));
 
+    const closeOrder = document.getElementById('closeOrder');
+    if (closeOrder) closeOrder.addEventListener('click', () => toggleModal(orderModal, false));
+
     // Close on overlay click
     window.addEventListener('click', (e) => {
         if (e.target === searchModal) toggleModal(searchModal, false);
         if (e.target === profileModal) toggleModal(profileModal, false);
+        if (e.target === orderModal) toggleModal(orderModal, false);
     });
 
 });

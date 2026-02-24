@@ -394,7 +394,7 @@ ul {
 /* -- Collections -- */
 .collections-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin-top: 4rem;
 }
@@ -731,45 +731,117 @@ ul {
 }
 
 
-/* --- RESPONSIVE FIXES --- */
+/* ================================================
+   COMPREHENSIVE RESPONSIVE DESIGN
+   ================================================ */
+
+/* --- 1024px Tablets Landscape --- */
 @media (max-width: 1024px) {
     .title {
         font-size: 4rem;
     }
 
-    .collections-grid,
+    .lux-title {
+        font-size: 2.5rem;
+    }
+
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .collection-item {
+        height: 380px;
+    }
+
     .services-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .footer-top {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 2rem;
+    }
+
+    .f-brand {
+        grid-column: 1 / -1;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-form {
+        flex-direction: column;
     }
 }
 
+/* --- 768px Tablets Portrait & Mobile --- */
 @media (max-width: 768px) {
+
+    /* Top Bar */
     .top-bar-inner {
         flex-direction: column;
         text-align: center;
-        gap: 5px;
+        gap: 4px;
+        font-size: 0.8rem;
+    }
+
+    /* Header */
+    .header {
+        padding: 0.8rem 0;
     }
 
     .mobile-toggle {
         display: block;
+        order: 1;
+        font-size: 1.3rem;
     }
 
+    .logo {
+        order: 2;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo .en-logo {
+        font-size: 1.5rem;
+    }
+
+    .logo .ar-logo {
+        font-size: 1rem;
+    }
+
+    .header-icons {
+        order: 3;
+        gap: 0.8rem;
+    }
+
+    .icon-btn {
+        font-size: 1.1rem;
+    }
+
+    /* Mobile Nav */
     .nav-menu {
         position: fixed;
         top: 0;
         right: -100%;
         width: 80%;
+        max-width: 300px;
         height: 100vh;
         background: var(--bg-cream);
         flex-direction: column;
-        padding: 6rem 2rem;
+        padding: 5rem 2rem 2rem;
         transition: right 0.4s ease;
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -778,20 +850,200 @@ ul {
 
     .nav-menu ul {
         flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .nav-menu a {
+        font-size: 1.2rem;
+    }
+
+    /* Hero */
+    .hero {
+        height: 70vh;
+        min-height: 450px;
     }
 
     .title {
-        font-size: 3rem;
+        font-size: 2.8rem;
+    }
+
+    .text {
+        font-size: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
     }
 
     .slide-content {
-        align-items: center;
+        align-items: flex-end;
+        text-align: right;
+        max-width: 100%;
+    }
+
+    /* Collections */
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .collection-item {
+        height: 280px;
+    }
+
+    .item-overlay h3 {
+        font-size: 1.4rem;
+    }
+
+    /* Shop Filters */
+    .filter-controls {
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        font-size: 0.95rem;
+    }
+
+    /* Products */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .product-img {
+        height: 280px;
+    }
+
+    /* About */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-img-box {
+        height: 320px;
+    }
+
+    /* Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Footer */
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
         text-align: center;
     }
 
-    .filter-controls {
-        flex-wrap: wrap;
-        gap: 10px;
+    /* Section Padding */
+    .section-padding {
+        padding: 4rem 0;
+    }
+
+    /* Lux Title */
+    .lux-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* --- 480px Small Phones --- */
+@media (max-width: 480px) {
+
+    /* Cart */
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+
+    /* Hero */
+    .hero {
+        height: 60vh;
+        min-height: 380px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
+
+    /* Collections: single column */
+    .collections-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .collection-item {
+        height: 240px;
+    }
+
+    /* Products: single column */
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-img {
+        height: 320px;
+    }
+
+    /* About */
+    .about-img-box {
+        height: 260px;
+    }
+
+    /* Lux Title */
+    .lux-title {
+        font-size: 1.9rem;
+    }
+
+    /* Section Padding */
+    .section-padding {
+        padding: 3rem 0;
+    }
+
+    /* Modal */
+    .modal-content {
+        padding: 2rem 1.2rem;
+    }
+
+    /* Logo */
+    .logo .en-logo {
+        font-size: 1.3rem;
+    }
+
+    .logo .ar-logo {
+        font-size: 0.85rem;
+    }
+
+    /* Services */
+    .s-box i {
+        font-size: 2rem;
+    }
+
+    .s-box h4 {
+        font-size: 1.2rem;
+    }
+
+    /* Auth */
+    .auth-form .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .register-box {
+        padding: 2rem 1.5rem;
     }
 }
 
@@ -829,21 +1081,20 @@ ul {
 .cart-sidebar {
     position: fixed;
     top: 0;
-    right: -400px;
-    /* Hidden initially (RTL means right side) */
+    left: -420px;
     width: 400px;
     max-width: 100%;
     height: 100vh;
     background: var(--bg-cream);
     z-index: 1001;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.12);
     display: flex;
     flex-direction: column;
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cart-sidebar.open {
-    right: 0;
+    left: 0;
 }
 
 .cart-header {
@@ -972,7 +1223,7 @@ ul {
 @media (max-width: 480px) {
     .cart-sidebar {
         width: 100%;
-        right: -100%;
+        left: -100%;
     }
 }
 
