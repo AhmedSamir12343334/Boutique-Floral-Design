@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جاردينيا الفاخرة | Boutique Floral Design</title>
+
+    <!-- خطوط جوجل الفاخرة -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- مكتبة Swiper Slider للصور -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- ملف الاستايل -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <span>توصيل مجاني للطلبات المميزة | تغليف مجاني مع كل باقة</span>
+            <div class="top-bar-links">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i> +20 123 456 7890</a>
+                <span>|</span>
+                <a href="#">تتبع الطلب</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة التصفح (Header) -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <!-- زر الموبايل -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <!-- الشعار -->
+            <a href="#" class="logo">
+                <span class="en-logo">Gardenia</span>
+                <span class="ar-logo">جاردينيا</span>
+            </a>
+
+            <!-- الروابط -->
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#collections">المجموعات</a></li>
+                    <li><a href="#shop">المتجر الفاخر</a></li>
+                    <li><a href="#about">حكايتنا</a></li>
+                </ul>
+            </nav>
+
+            <!-- أيقونات -->
+            <div class="header-icons">
+                <button class="icon-btn" id="searchBtn" title="البحث"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="icon-btn" id="profileBtn" title="حسابي"><i class="fa-regular fa-user"></i></button>
+                <button class="icon-btn cart-btn" title="السلة">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي (Hero Slider) -->
+    <section class="hero" id="home">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg"
+                        style="background-image: url('https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=2000&auto=format&fit=crop');">
+                    </div>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content container">
+                        <span class="subtitle">المجموعة الرومانسية</span>
+                        <h1 class="title">لغة العشق الصامتة</h1>
+                        <p class="text">دع الورد الأحمر يعبر عما تعجز عنه الكلمات، بتنسيقات يدوية تنبض بالحب.</p>
+                        <a href="#shop" class="btn btn-luxury">اكتشف المجموعة</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg"
+                        style="background-image: url('https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?q=80&w=2000&auto=format&fit=crop');">
+                    </div>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content container" style="text-align: right; align-items: flex-start;">
+                        <span class="subtitle">التوليب الأبيض</span>
+                        <h1 class="title">نقاء لا يضاهى</h1>
+                        <p class="text">باقات التوليب الأبيض الفاخرة، مثالية لشكر من تحب أو لزفاف أحلامك.</p>
+                        <a href="#shop" class="btn btn-luxury btn-light">تسوق الآن</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- أقسام التسوق الفاخرة (Categories) -->
+    <section class="collections section-padding" id="collections">
+        <div class="container">
+            <div class="section-title-wrapper text-center reveal">
+                <h2 class="lux-title">مجموعاتنا المتميزة</h2>
+                <div class="lux-divider"></div>
+                <p class="lux-subtitle">تنسيقات مصممة بعناية فائقة لتلائم أذواقكم الرفيعة</p>
+            </div>
+
+            <div class="collections-grid">
+                <a href="#" class="collection-item reveal">
+                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800&auto=format&fit=crop"
+                        alt="مناسبات سعيدة">
+                    <div class="item-overlay">
+                        <h3>أفراح وتهنئة</h3>
+                        <span>تسوق الآن <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </a>
+                <a href="#" class="collection-item reveal">
+                    <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?q=80&w=800&auto=format&fit=crop"
+                        alt="حب ورومانسية">
+                    <div class="item-overlay">
+                        <h3>رومانسية وحب</h3>
+                        <span>تسوق الآن <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </a>
+                <a href="#" class="collection-item reveal">
+                    <img src="https://images.unsplash.com/photo-1613539246066-78db6ec4ff0f?q=80&w=800&auto=format&fit=crop"
+                        alt="أزهار مجففة">
+                    <div class="item-overlay">
+                        <h3>أزهار الحرير الدائمة</h3>
+                        <span>تسوق الآن <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- المنتجات المختارة (Shop Filter) -->
+    <section class="shop-section section-padding bg-light" id="shop">
+        <div class="container">
+            <div class="section-title-wrapper text-center reveal">
+                <h2 class="lux-title">الاختيارات المفضلة</h2>
+                <div class="lux-divider"></div>
+            </div>
+
+            <!-- فلاتر -->
+            <div class="filter-controls reveal">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="roses">ورود جوري</button>
+                <button class="filter-btn" data-filter="tulips">توليب</button>
+                <button class="filter-btn" data-filter="mixed">باقات متنوعة</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Product 1 -->
+                <div class="product-card reveal" data-category="roses">
+                    <div class="product-img">
+                        <img src="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="باقة الورد الأحمر">
+                        <div class="add-action">
+                            <button class="add-to-cart" data-id="1" data-name="الباقة المخملية" data-price="1200"
+                                data-image="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?auto=compress&cs=tinysrgb&w=150"><i
+                                    class="fa-solid fa-bag-shopping"></i> إضافة للسلة</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="p-title">الباقة المخملية (روز أحمر)</h3>
+                        <p class="p-price">1,200 ج.م</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card reveal" data-category="mixed">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1591886960571-74d43a9d4166?q=80&w=800&auto=format&fit=crop"
+                            alt="أزهار الربيع">
+                        <div class="add-action">
+                            <button class="add-to-cart" data-id="2" data-name="نسيم الصباح" data-price="950"
+                                data-image="https://images.unsplash.com/photo-1591886960571-74d43a9d4166?q=80&w=150&auto=format&fit=crop"><i
+                                    class="fa-solid fa-bag-shopping"></i> إضافة للسلة</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="p-title">تنسيقة نسيم الصباح</h3>
+                        <p class="p-price">950 ج.م</p>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card reveal" data-category="tulips">
+                    <div class="product-img">
+                        <span class="lux-badge">الأكثر طلباً</span>
+                        <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?q=80&w=800&auto=format&fit=crop"
+                            alt="توليب أبيض">
+                        <div class="add-action">
+                            <button class="add-to-cart" data-id="3" data-name="نقاء التوليب" data-price="1500"
+                                data-image="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?q=80&w=150&auto=format&fit=crop"><i
+                                    class="fa-solid fa-bag-shopping"></i> إضافة للسلة</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="p-title">باقة نقاء التوليب</h3>
+                        <p class="p-price">1,500 ج.م</p>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card reveal" data-category="mixed">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=800&auto=format&fit=crop"
+                            alt="زهور برية">
+                        <div class="add-action">
+                            <button class="add-to-cart" data-id="4" data-name="سحر البنفسج" data-price="850"
+                                data-image="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=150&auto=format&fit=crop"><i
+                                    class="fa-solid fa-bag-shopping"></i> إضافة للسلة</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="p-title">سحر البنفسج الفاخر</h3>
+                        <p class="p-price">850 ج.م</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center reveal" style="margin-top: 3rem;">
+                <a href="#" class="btn btn-outline-elegant">تصفح الكتالوج بالكامل</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم حكايتنا (About Us) -->
+    <section class="about-section section-padding" id="about">
+        <div class="container about-grid">
+            <div class="about-img-box reveal">
+                <img src="https://images.unsplash.com/photo-1584589167171-541ce45f1eea?q=80&w=800&auto=format&fit=crop"
+                    alt="متجر جاردينيا">
+                <div class="exp-badge">
+                    <span class="num">+10</span>
+                    <span>أعوام من<br>التميز</span>
+                </div>
+            </div>
+            <div class="about-text-box reveal">
+                <h2 class="lux-title">شغفنا يتجسد في كل بتلة</h2>
+                <div class="lux-divider" style="margin: 0 0 1.5rem 0;"></div>
+                <p class="text-muted" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+                    بدأت قصة "جاردينيا" من حب عميق للطبيعة ورغبة في نقل هذا السحر إلى محبي الجمال. نحن لسنا مجرد متجر
+                    لبيع الزهور، بل نحن صُناع للحظات السعيدة والمشاعر الصادقة. نحرص على انتقاء كل زهرة بعناية لنضمن لك
+                    باقات تنبض بالحياة والفخامة.
+                </p>
+                <ul class="lux-list">
+                    <li><i class="fa-solid fa-check-double"></i> أزهار تُقطف يدوياً يومياً من أفخم المزارع.</li>
+                    <li><i class="fa-solid fa-check-double"></i> فريق من المصممين المحترفين لتنسيق باقاتك.</li>
+                    <li><i class="fa-solid fa-check-double"></i> الالتزام الكامل بمعايير الجودة العالمية.</li>
+                </ul>
+                <a href="#shop" class="btn btn-luxury" style="margin-top: 2rem;">تصفح أعمالنا الفنية</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات والمميزات (Luxury features) -->
+    <section class="services-banner section-padding" style="background-color: var(--dark-green); color: white;">
+        <div class="container services-grid">
+            <div class="s-box reveal">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h4>توصيل راقي وسريع</h4>
+                <p>مندوبون بزي رسمي لتسليم الهدية بأرقى صورة.</p>
+            </div>
+            <div class="s-box reveal">
+                <i class="fa-solid fa-ribbon"></i>
+                <h4>تغليف حصري</h4>
+                <p>نستخدم أجود أنواع الورق والشرائط الحريرية المستوردة.</p>
+            </div>
+            <div class="s-box reveal">
+                <i class="fa-solid fa-pen-fancy"></i>
+                <h4>كروت إهداء بخط اليد</h4>
+                <p>نكتب رسائلك بخط اليد العربي الأصيل لإضفاء لمسة شخصية.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- إشعار السلة (Toast) -->
+    <div class="toast-notification" id="toast">
+        <i class="fa-solid fa-circle-check"></i> <span id="toastMsg">تم إضافة الباقة إلى السلة بنجاح.</span>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="f-brand">
+                    <h2><span class="en">Gardenia</span> جاردينيا</h2>
+                    <p>عنوان الرقي في عالم الأزهار. نصنع من الورد لغة لا تُنسى.</p>
+                    <div class="socials">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="f-links">
+                    <h4>استكشف</h4>
+                    <ul>
+                        <li><a href="#shop">تسوق الآن</a></li>
+                        <li><a href="#collections">المناسبات</a></li>
+                        <li><a href="#">الاشتراكات الشهرية</a></li>
+                        <li><a href="#">مدونة الورد</a></li>
+                    </ul>
+                </div>
+                <div class="f-contact">
+                    <h4>تواصل معنا</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> الدقي، القاهرة، مصر</p>
+                    <p><i class="fa-solid fa-phone"></i> +20 123 456 7890</p>
+                    <p><i class="fa-solid fa-envelope"></i> vip@gardenia.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2026 جاردينيا للزهور الفاخرة.</p>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- سلة المشتريات (Cart Sidebar) -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> سلة التسوق</h3>
+            <button class="close-cart" id="closeCart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- سيتم إضافة المنتجات هنا عبر الجافاسكربت -->
+            <div class="empty-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <p>سلتك فارغة الأناقة حالياً!</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>المجموع:</span>
+                <span id="cartTotalValue">0</span> ج.م
+            </div>
+            <button class="btn btn-luxury checkout-btn" id="checkoutBtn" style="width: 100%;">إتمام الشراء
+                للعميل</button>
+        </div>
+    </div>
+
+    <!-- نافذة البحث (Search Modal) -->
+    <div class="modal-overlay" id="searchModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeSearch"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="lux-title text-center" style="font-size: 2rem; margin-bottom: 2rem;">عن ماذا تبحث؟</h2>
+            <form class="search-form">
+                <input type="text" placeholder="مثال: باقات ورد أحمر، هدايا..." autofocus>
+                <button type="button" class="btn btn-luxury"><i class="fa-solid fa-magnifying-glass"></i> بحث</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- نافذة حسابي (Profile Modal) -->
+    <div class="modal-overlay" id="profileModal">
+        <div class="modal-content" style="max-width: 450px;">
+            <button class="close-modal" id="closeProfile"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="lux-title text-center" style="font-size: 2rem; margin-bottom: 2rem;">تسجيل الدخول</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" placeholder="اسمك@example.com">
+                </div>
+                <div class="form-group">
+                    <label>كلمة المرور</label>
+                    <input type="password" placeholder="••••••••">
+                </div>
+                <button type="button" class="btn btn-luxury" style="width: 100%; margin-top: 1rem;">دخول</button>
+                <p class="text-center" style="margin-top: 1.5rem; color: var(--text-muted);">ليس لديك حساب؟ <a
+                        href="register.html" style="color: var(--gold); font-weight: bold;">سجل الآن</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
